@@ -6,26 +6,25 @@
 
 // Exibir uma mensagem de "Valor insuficiente" caso o valor seja menor que R$1,00.
 
-class Parquimetro{
+class Parquimetro {
     #saldo
     constructor(saldo, tempo){
         this.#saldo = 0;
-        this.tempo = tempo;
+        this.tempo = "";
     }
 
-    depositar(valor){
+    depositar(){
         const valor = parseFloat(document.getElementById("valor").value);
         this.#saldo += valor;
+        document.getElementById("deposito").textContent = 'Saldo: R$'+ this.#saldo + `,00`;
     }
-
-    get saldo(){
-        return this.#saldo;
-    }
-
     minutos(){
-        if(valor < 1){
-            this.tempo = 'Valor insuficiente';
-        } else if (valor == 1)
-    }
 
+    console.log("Método minutos() chamado");
+    // sua lógica aqui
+  }
 }
+
+// instância global
+const p = new Parquimetro();
+p.minutos();
