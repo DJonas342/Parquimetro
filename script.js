@@ -14,17 +14,28 @@ class Parquimetro {
     }
 
     depositar(){
+        //Pegar o valor de input e somar ao valor de #saldo
         const valor = parseFloat(document.getElementById("valor").value);
-        this.#saldo += valor;
-        document.getElementById("deposito").textContent = 'Saldo: R$'+ this.#saldo + `,00`;
+        //Condição de avisar sobre valor insuficiente se não bater o valor minimo
+        if(valor < 1){
+            document.getElementById("deposito").textContent= 'Saldo: R$ Valor insuficiente';
+        }else{
+        this.#saldo = valor;
+        //Exibição de saldo atualizado na pagina e formatação de "." para "," nas casas decimais
+        document.getElementById("deposito").textContent = `Saldo: ${this.#saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+        //Chamada de metodo para calcular o tempo
+        this.minutos()
+        }
     }
-    minutos(){
 
-    console.log("Método minutos() chamado");
-    // sua lógica aqui
+    minutos(){
+        //Deixando em branco o campo input
+        document.getElementById("valor").value= '';
+        //Condições baseada na variavel #saldo
+
   }
 }
 
 // instância global
 const p = new Parquimetro();
-p.minutos();
+p.depositar()
