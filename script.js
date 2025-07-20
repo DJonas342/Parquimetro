@@ -20,6 +20,8 @@ class Parquimetro {
         //Condição de avisar sobre valor insuficiente se não bater o valor minimo
         if(valor < 1){
             document.getElementById("deposito").textContent= 'Saldo: R$ Valor insuficiente';
+            document.getElementById("tempo").textContent = `Tempo: 00:00`
+            document.getElementById("troco").textContent = `Troco: R$ 0,00`
         } else if(valor == 1){
             this.troco = 0
             this.#saldo = valor;
