@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script src="script.js"></script>
+    <link href="Style.css" rel="stylesheet"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parquimetro</title>
@@ -15,7 +17,8 @@
             <img src="/imagem/Valor-Tempo.png" alt="Tabela de valor e tempo">
             <p id="deposito">Saldo: R$0,00</p>
             <input id="valor" type="number" placeholder="Deposite o valor aqui">
-            <button>Depositar</button>
+            <button onclick="p.depositar()">Depositar</button>
+            <p id="troco"></p>
             <p id="tempo"></p>
         </section>
     </main>
